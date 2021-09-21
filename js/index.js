@@ -22,11 +22,16 @@ function showMessage(message) {
 
 function clickHandler() {
   if (birthDate.value && luckyNumber.value) {
-    if (sumOfBirthDay() % luckyNumber.value === 0) {
-      const message = `hurray 🤗🤗🤗 ${luckyNumber.value} is a lucky number`;
-      showMessage(message);
+    if (luckyNumber.value >= 0) {
+      if (sumOfBirthDay() % luckyNumber.value === 0) {
+        const message = `hurray 🤗🤗🤗 ${luckyNumber.value} is a lucky number`;
+        showMessage(message);
+      } else {
+        const message = `${luckyNumber.value} is not that lucky 🙁🙁🙁🙁`;
+        showMessage(message);
+      }
     } else {
-      const message = `${luckyNumber.value} is not that lucky 🙁🙁🙁🙁`;
+      const message = "Negative values are not allowed";
       showMessage(message);
     }
   } else {
