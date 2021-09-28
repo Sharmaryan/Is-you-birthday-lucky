@@ -22,7 +22,7 @@ function showMessage(message) {
 
 function clickHandler() {
   if (birthDate.value && luckyNumber.value) {
-    if (luckyNumber.value >= 0) {
+    if (luckyNumber.value > 0) {
       if (sumOfBirthDay() % luckyNumber.value === 0) {
         const message = `hurray 🤗🤗🤗 ${luckyNumber.value} is a lucky number`;
         showMessage(message);
@@ -31,7 +31,7 @@ function clickHandler() {
         showMessage(message);
       }
     } else {
-      const message = "Negative values are not allowed";
+      const message = "Value should be greater than zero";
       showMessage(message);
     }
   } else {
